@@ -1,0 +1,140 @@
+body {
+	scrollbar-face-color: #620706;
+	scrollbar-shadow-color: #340403;
+	scrollbar-highlight-color: #340403;
+	scrollbar-3dlight-color: #620706;
+	scrollbar-darkshadow-color: #620706;
+	scrollbar-track-color: #1D1D1D;
+	scrollbar-arrow-color: #FBF891;
+	padding: 0;
+	margin: 0;
+	font-weight : normal;
+	font-size : 12px;
+	font-family: Verdana,Tahoma,Arial;
+	color : #D1D1D1;
+	CURSOR: url('/images/nav/normal.cur'), default; 
+}
+
+a, a:visited {color:#FBF891;text-decoration: none;CURSOR: url('/images/nav/hand.cur'), pointer; }
+a:hover {color:#7A7A8F;text-decoration: none;CURSOR: url('/images/nav/hand.cur'), pointer; }
+
+form {
+	padding: 0;
+	margin: 0;
+}
+.ererf {
+	background-repeat: repeat-x; 
+	background-position-y: top;
+}
+td {
+	font-size: 11px;
+	font-family: Tahoma,Verdana,Arial;
+}
+
+TEXTAREA
+{
+border-right : 1px solid #9A9A9A;
+border-top : 1px solid #666666;
+font-weight : bold;
+font-size : 12px;
+border-left : 1px solid #9A9A9A;
+color : #ffffff;
+text-indent : 2px;
+border-bottom : 1px solid #ffffff;
+font-family : Verdana;
+background-color : #000000;
+}
+
+INPUT
+{
+background-color : #000000;
+border-bottom-color : #aaaaff;
+border-bottom-width : 1px;
+border-left-color : #aaaaff;
+border-left-width : 1px;
+border-right-color : #aaaaff;
+border-right-width : 1px;
+border-top-color : #9A9A9A;
+border-top-width : 1px;
+color : #ffffff;
+font-family : Verdana;
+font-size : 10px;
+font-weight : normal;
+text-indent : 2px;
+}
+
+SELECT
+{
+font-weight : bold;
+font-size : 10px;
+font-family : Verdana;
+}
+
+SELECT.pn-text
+{
+font-weight : bold;
+font-size : 10px;
+color : #000000;
+font-family : Verdana;
+background-color : #ffffff;
+}
+
+A:link
+{
+font-weight : bold;
+font-size : 11px;
+color : #deb887;
+font-family : Verdana;
+text-decoration : none;
+}
+
+A:visited
+{
+font-weight : bold;
+font-size : 11px;
+color : #deb887;
+font-family : Verdana;
+text-decoration : none;
+}
+
+A:hover
+{
+font-weight : bold;
+font-size : 11px;
+color : #aaaaff;
+font-family : Verdana;
+text-decoration : none;
+}
+
+A:active
+{
+font-weight : bold;
+font-size : 11px;
+color : #aaaaff;
+font-family : Verdana;
+text-decoration : none;
+}
+
+TD.m
+{
+border-right : 1px solid #663903;
+padding-right : 2px;
+border-top : 1px solid #663903;
+padding-left : 2px;
+padding-bottom : 2px;
+font : bold 10px verdana;
+border-left : 1px solid #663903;
+color : #F29D00;
+padding-top : 2px;
+border-bottom : 1px solid #663903;
+height : 20px;
+background-color : #422B00;
+text-align : justify;
+}
+
+.ERROR
+{
+	font-family: Verdana,Tahoma,Arial,Times,sans-serif;
+	font-weight: 700;
+	color: #FF0000;
+}

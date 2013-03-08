@@ -1,0 +1,85 @@
+<script type="text/javascript">
+Ext.onReady(function(){
+
+    Ext.QuickTips.init();
+
+    // turn on validation errors beside the field globally
+    Ext.form.Field.prototype.msgTarget = 'side';
+
+	//Объявялется именно так, потому что сама переменная уже задана в главном окне
+	//и главное же окно собмитит форму если в этом есть необходимость
+    form = new Ext.form.Form({
+        labelWidth: 250, // label settings here cascade unless overridden
+      	fileUpload : false,
+      	method : 'POST'
+    });
+
+    form.add(
+            new Ext.form.TextField({
+            fieldLabel: 'Название игры',
+            name: 'gamename',
+			value: "[#value_gamename#]",
+            width:175,
+			alidateOnBlur: false
+        }),
+        
+        new Ext.form.TextField({
+            fieldLabel: 'Доменное имя (без http://)',
+            name: 'domen',
+			value: "[#value_domen#]",
+            width:175,
+			alidateOnBlur: false
+        }),
+
+        new Ext.form.TextField({
+            fieldLabel: 'Полный путь до скрипта',
+			value: "[#value_path#]",
+            name: 'path',
+            width:175,
+			alidateOnBlur: false,
+        }),
+
+        new Ext.form.TextField({
+            fieldLabel: 'Логин администратора',
+			value: "[#value_logins#]",
+            name: 'login',
+            width:175,
+			alidateOnBlur: false
+        }),
+
+        new Ext.form.TextField({
+            fieldLabel: 'Пароль администратора',
+			value: "[#value_password#]",
+            name: 'password',
+            width:175,
+			alidateOnBlur: false
+        }),
+        
+        new Ext.form.TextField({
+            fieldLabel: 'E-mail администратора',
+			value: "[#value_email#]",
+            name: 'email',
+            width:175,
+			alidateOnBlur: false
+        })
+     
+    );
+
+    form.end(); // close the column
+	form.render('form-step1');
+	//btnNext.on("click", function() {form.el.dom.submit();});
+	//form.el.un('submit', form.onSubmit, fs);
+    //form.el.dom.setAttribute('action', form.url);
+	//alert('yes');
+});
+</script>
+<div>
+    <div class="x-box-tl"><div class="x-box-tr"><div class="x-box-tc"></div></div></div>
+    <div class="x-box-ml"><div class="x-box-mr"><div class="x-box-mc">
+        <h3 style="margin-bottom:5px;">Введите необходимые параметры</h3>
+        <div id="form-step1">
+
+        </div>
+    </div></div></div>
+    <div class="x-box-bl"><div class="x-box-br"><div class="x-box-bc"></div></div></div>
+</div>

@@ -1,0 +1,54 @@
+#message
+{
+	font-weight: bold;
+	text-align: center;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 10px;
+}
+
+#scroll
+{
+	position: relative;
+	margin: 0 auto;
+	display: none;
+	background-color: #000000;
+	z-index: 100;
+	width: 300px;
+	height: 90px;
+	border-top-style: solid;
+	border-left-style: solid;                       
+	border-right-style: solid;
+	border-collapse: collapse;
+	border-bottom-style: solid;
+	border-color: gold;
+	border-width: 1px;
+	overflow: auto;
+}
+
+#scroll div
+{
+	margin: 0 auto;
+	text-align: left;
+}
+
+#suggest table
+{
+	width: 280px;
+	font-size: 11px;
+	font-weight: normal;
+	color: #F0F0F0;
+	text-decoration: none;
+	border: 0px;
+	padding: 0px;
+	text-align: left;
+	margin: 0px;
+	background-color: #000000;
+}
+
+.highlightrow
+{
+	background-color: #222222;
+	cursor: url('/images/nav/hand.cur'), pointer;
+}                      
+			

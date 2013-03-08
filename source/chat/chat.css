@@ -1,0 +1,31 @@
+body {
+	scrollbar-base-color:3A3A3A ;
+	scrollbar-track-color: 3A3A3A;
+	padding: 0;
+	margin: 0;
+	font-weight : normal;
+	font-size : 11px;
+	font-family: Verdana,Tahoma,Arial,Helvetica,sans-serif;
+	color : #D1D1D1;
+	background-color: black;
+}
+.contextMenus { background-color: #000058; 
+				border-style:solid; border-width:1px;
+				border-color:gold gold gold gold;
+				padding-left:5px;
+				padding-right:5px;
+				padding-top:5px;
+				padding-bottom:5px;
+				background-color:black;
+				display:none}
+.menuItem     { cursor:url('/images/nav/hand.cur'), pointer; font-size:9pt;
+				font-family: Arial, Helvetica, sans-serif;
+				padding-left: 5px; color:white;
+				background-color:black;
+				text-decoration:none;}
+.menuItemOn   { cursor:url('/images/nav/hand.cur'), pointer; font-size:9pt;
+				font-family:Arial, Helvetica, sans-serif;
+				padding-left:5px; color:yellow;
+				background-color:black;
+				text-decoration:underline;}
+.contextEntry { color:darkred;cursor:url('/images/nav/hand.cur'), pointer;}

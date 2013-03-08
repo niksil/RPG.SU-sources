@@ -1,0 +1,214 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=cp1251" />
+<title>Установка он-лайн игры Средиземье :: Эпоха Сражений ::</title>
+<style type="text/css">
+<!--
+.main-header {color:#FFFFFF;font:bold 16px helvetica;}
+.style2 {color: #FF9453}
+-->
+</style>
+<link rel="stylesheet" type="text/css" href="source/template/default/extjs/resources/css/ext-all.css" />
+<script type="text/javascript" src="source/template/default/extjs/adapter/yui/yui-utilities.js"></script>
+<script type="text/javascript" src="source/template/default/extjs/adapter/yui/ext-yui-adapter.js"></script>
+<script type="text/javascript" src="source/template/default/extjs/ext-all.js"></script>
+<script type="text/javascript">
+
+	var num_step_curent = 0;
+	var btnPrev, btnNext, btnAll;
+	var form; //используется внутри, для отображения формы и вовда полей
+	var win_msg;
+	var finish_url;
+
+	function show_message(show_msg)
+	{
+		if (win_msg == undefined)
+		{
+			win_msg = Ext.MessageBox.show({
+			title: 'Статус процесса',
+			width:300,
+			progress:true,
+			closable:false
+			//,animEl: 'mb6'
+			});
+		}
+		win_msg.updateText(show_msg);
+	}
+
+	//Обнавляет информацию о действиях в статус баре
+	function show_message_dir(dirc, dira)
+	{
+		win_msg.updateProgress(dirc/dira, 'Создано ' + dirc + ' дирректорий из '+ dira +'');
+	}
+
+	//Обнавляет информацию о действиях в статус баре
+	function show_message_files(filec, filea)
+	{
+		win_msg.updateProgress(filec/filea, 'Скоприровано ' + filec + ' Kb из '+ filea +' Kb');
+	}
+
+	function show_message_hide()
+	{
+		win_msg.hide();
+		win_msg = undefined;
+	}
+
+
+	function redirect_admin(url)
+	{
+		btnNext.setDisabled(true);
+		btnPrev.setDisabled(false);
+		btnAll.setDisabled(false);
+		finish_url = url;
+	}
+
+	function finish_install()
+	{
+		document.location = finish_url;
+	}
+
+	function set_step_next()
+	{
+		//Прежде надо проверить, если форма "form" - объект. Значит ей нужно прособмитить сначала
+		//а уже потом усуществлять переход к следующему шагу.
+		if (form != undefined)
+		{
+        	form.submit({
+            	clientValidation: false,
+	            method: 'POST',
+    	        waitTitle: 'Проверка данных',
+        	    waitMsg: 'Идёт проверка данных, ждите...',
+            	url: '/install/index.php?savestep='+num_step_curent,
+	            success:function(fr, action){
+                	//Ext.Msg.show({title:'Информация', msg: action.result.postdata, buttons: Ext.Msg.OK });
+					//Снова объявим форму, что бы очистить её
+					form = undefined;
+					num_step_curent++;
+					show_curent_step();
+					Ext.get("center-div").load({url: "index.php?step="+num_step_curent, scripts: true, text: "Пожалуйста дождитесь полной загрузки..."})
+            	},
+	            failure: function(fr, action){
+    	            Ext.Msg.show({title:'Ошибка!', msg: action.result.info, buttons: Ext.Msg.OK});
+	            }
+			});
+		} else
+ 		{
+			form = undefined;
+			num_step_curent++;
+			show_curent_step();
+			Ext.get("center-div").load({url: "index.php?step="+num_step_curent, scripts: true})
+			if (btnPrev.disabled)
+				btnPrev.setDisabled(false);
+		}
+
+	}
+
+	function show_curent_step()
+	{
+		if (num_step_curent == 0)
+			document.getElementById('div_curent_step').innerHTML = "Инсталяция включает <span class='style2'>4</span> шага</span>";
+		else
+			document.getElementById('div_curent_step').innerHTML = "Шаг&nbsp;<span class='style2'>"+num_step_curent+"</span> из <span class='style2'>4</span>&nbsp;</span>";
+	}
+	//В обратном шаге ничего отсылать не надо, просто подгружаем
+	//соответствующий конетнт и всё
+	function set_step_return()
+	{
+		if (num_step_curent == 0)
+			return false
+
+		form = undefined;
+		//При шаге 4 - надо отскачить назад на два шага
+		if (num_step_curent > 4)
+			num_step_curent = 4;
+
+		num_step_curent--;
+		show_curent_step();
+		Ext.get("center-div").load({url: "/install/index.php?step="+num_step_curent, scripts: true, text: "Пожалуйста дождитесь полной загрузки..."})
+		if (num_step_curent == 0)
+			btnPrev.setDisabled(true);
+
+		btnNext.setDisabled(false);
+
+	}
+
+	var start_interface = function(){
+		var south_panel, center_panel;
+		return {
+			init : function(){
+				// initialize state manager, we will use cookies
+				Ext.state.Manager.setProvider(new Ext.state.CookieProvider());
+				//window.resizeTo(600, 450);
+				var mainLayout = new Ext.BorderLayout('layer-contener', {
+				north: {
+                    split: false,
+					initialSize: 38,
+					collapsible: false
+                },
+
+                south: {
+                    split: false,
+					initialSize: 38
+                },
+                center: {
+                }
+            });
+            mainLayout.beginUpdate();
+            mainLayout.add('south', south_panel = new Ext.ContentPanel('south-div', {
+                fitToFrame: true, closable: false
+            }));
+            mainLayout.add('center', center_panel = new Ext.ContentPanel('center-div', {
+                fitToFrame: true, autoScroll:true
+            }));
+            mainLayout.add('north', north_panel = new Ext.ContentPanel('north-div', {
+                fitToFrame: true, closable: false
+            }));
+
+
+            mainLayout.endUpdate();
+
+			//Добавим кнопки назад, вперёд и готово в южную часть
+			btnPrev = new Ext.Button('idbtn-prev',{text:" <- Назад "  , disabled: true});
+			btnNext = new Ext.Button('idbtn-next',{text:"  Вперёд -> ", disabled: false});
+			btnAll =  new Ext.Button('idbtn-all', {text:"  Готово "   , disabled: true});
+
+			btnNext.on("click", set_step_next);
+			btnPrev.on("click", set_step_return);
+			btnAll.on("click", finish_install);
+			show_curent_step();
+
+			Ext.get("center-div").load({url: "/install/index.php?step=0", scripts: true, text: "Пожалуйста дождитесь полной загрузки..."})
+			}
+		};
+	}();
+
+	Ext.onReady(start_interface.init, start_interface);
+</script>
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%">
+  <tr align="center" valign="middle">
+    <td align="center" valign="middle"><div id="layer-contener" style="width:600px; height:350px; position:relative;">
+        <div id="north-div" style="background-image: url('/install/source/template/default/images/header.gif');background-repeat: repeat-x;">
+          <table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%">
+            <tr>
+              <td class="main-header" align="left"><span style="padding-left: 15px;" id="div_curent_step"></td>
+              <td class="main-header" align="right"><span style="padding-right: 20px;"><img src="source/template/default/images/xray_logo.gif" width="172" height="18"/></span></td>
+            </tr>
+          </table>
+        </div>
+        <div id="center-div" align="left"></div>
+        <div id="south-div" style="background-image: url('/install/source/template/default/images/header.gif');background-repeat: repeat-x;">
+          <table width="100%" height="100%" border="0" cellpadding="0" cellspacing="5">
+            <tr>
+              <td>&nbsp;</td>
+              <td align="center" valign="middle" id="idbtn-prev" width="10"></td>
+              <td align="center" valign="middle" id="idbtn-next" width="10"></td>
+              <td align="center" valign="middle" id="idbtn-all" width="10"></td>
+            </tr>
+          </table>
+        </div>
+      </div></td>
+  </tr>
+</table>
+</body>
+</html>

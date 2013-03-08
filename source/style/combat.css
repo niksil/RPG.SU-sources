@@ -1,0 +1,28 @@
+body,td,th {
+	color: #FFFFFF;
+	font-family: Verdana;
+	font-size: 11px;	
+}
+INPUT {BACKGROUND-COLOR: #000000; BORDER-BOTTOM-COLOR: #aaaaff; BORDER-BOTTOM-WIDTH: 1px; BORDER-LEFT-COLOR: #aaaaff; BORDER-LEFT-WIDTH: 1px; BORDER-RIGHT-COLOR: #aaaaff; BORDER-RIGHT-WIDTH: 1px; BORDER-TOP-COLOR: #c0c0c0; BORDER-TOP-WIDTH: 1px; COLOR: #ffffff; FONT-FAMILY: Verdana; FONT-SIZE: 11px; FONT-WEIGHT: normal; TEXT-INDENT: 2px}
+
+
+body {
+	background-color: #000000;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+.style1 {
+	color: #FF0000;
+	font-weight: bold;
+}
+.style2 {
+	font-family: Verdana;
+	font-size: 10px;
+}
+A:link {FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #deb887; FONT-FAMILY: Verdana; TEXT-DECORATION: none}
+A:visited {	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #deb887; FONT-FAMILY: Verdana; TEXT-DECORATION: none}
+A:hover {FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #aaaaff; FONT-FAMILY: Verdana; TEXT-DECORATION: none}
+A:active {FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #aaaaff; FONT-FAMILY: Verdana; TEXT-DECORATION: none	}
+TD.m {BORDER-RIGHT: #663903 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: #663903 1px solid; PADDING-LEFT: 2px; PADDING-BOTTOM: 2px; FONT: bold 10px verdana; BORDER-LEFT: #663903 1px solid; COLOR: #ffa600; PADDING-TOP: 2px; BORDER-BOTTOM: #663903 1px solid; HEIGHT: 20px; BACKGROUND-COLOR: #352112; TEXT-ALIGN: left}

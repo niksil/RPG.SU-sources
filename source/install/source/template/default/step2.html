@@ -1,0 +1,63 @@
+<script type="text/javascript">
+Ext.onReady(function(){
+
+    Ext.QuickTips.init();
+
+    // turn on validation errors beside the field globally
+    Ext.form.Field.prototype.msgTarget = 'side';
+
+	//ќбъ€в€летс€ именно так, потому что сама переменна€ уже задана в главном окне
+	//и главное же окно собмитит форму если в этом есть необходимость
+    form = new Ext.form.Form({
+        labelWidth: 250, // label settings here cascade unless overridden
+      	fileUpload : false,
+      	method : 'POST'
+    });
+
+    form.add(
+        new Ext.form.TextField({
+            fieldLabel: 'јдрес сервера mySql',
+            name: 'hostadress',
+			value: "[#value_hostadress#]",
+            width:175,
+			alidateOnBlur: false
+        }),
+        new Ext.form.TextField({
+            fieldLabel: 'Ћогин дл€ соединени€ с mySql',
+			value: "[#value_myslogin#]",
+            name: 'myslogin',
+            width:175,
+			alidateOnBlur: false
+        }),
+
+        new Ext.form.TextField({
+            fieldLabel: 'ѕароль дл€ соединени€ с mySql',
+			value: "[#value_myspassword#]",
+            name: 'myspassword',
+            width:175,
+			alidateOnBlur: false
+        }),
+
+        new Ext.form.TextField({
+            fieldLabel: '»м€ базы данных',
+			value: "[#value_namebase#]",
+            name: 'namebase',
+            width:175,
+			alidateOnBlur: false
+        }));
+
+    form.end(); // close the column
+	form.render('form-step2');
+});
+</script>
+
+<div>
+    <div class="x-box-tl"><div class="x-box-tr"><div class="x-box-tc"></div></div></div>
+    <div class="x-box-ml"><div class="x-box-mr"><div class="x-box-mc">
+        <h3 style="margin-bottom:5px;">¬ведите параметры дл€ доступа к mySQL</h3>
+        <div id="form-step2">
+
+        </div>
+    </div></div></div>
+    <div class="x-box-bl"><div class="x-box-br"><div class="x-box-bc"></div></div></div>
+</div>

@@ -1,0 +1,34 @@
+BODY {	FONT-WEIGHT: normal; FONT-SIZE: 12px; BACKGROUND: #000000; MARGIN: 0px; COLOR: #000000;}
+TD {FONT-SIZE: 11px; FONT-FAMILY: Verdana}
+INPUT {BACKGROUND-COLOR: #F1CB8D; BORDER-BOTTOM-COLOR: #000000; BORDER-BOTTOM-WIDTH: 2px; BORDER-LEFT-COLOR: #555555; BORDER-LEFT-WIDTH: 2px; BORDER-RIGHT-COLOR: #000000; BORDER-RIGHT-WIDTH: 1px; BORDER-TOP-COLOR: #555555; BORDER-TOP-WIDTH: 1px; COLOR: #000000; FONT-FAMILY: Verdana; FONT-SIZE: 10px; FONT-WEIGHT: normal; TEXT-INDENT: 2px}
+A:link
+{
+font-size : 11px;
+color : #111111;
+font-family : Verdana;
+text-decoration : underline;
+}
+
+A:visited
+{
+font-size : 11px;
+color : #111111;
+font-family : Verdana;
+text-decoration : underline;
+}
+
+A:hover
+{
+font-size : 11px;
+color : #ff0000;
+font-family : Verdana;
+text-decoration : underline;
+}
+
+A:active
+{
+font-size : 11px;
+color : #111111;
+font-family : Verdana;
+text-decoration : underline;
+}

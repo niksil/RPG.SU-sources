@@ -1,0 +1,205 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+<HEAD>
+<TITLE>Алгоритм боя</TITLE>
+<META HTTP-EQUIV="Expires" CONTENT="Fri, Jan 01 1900 00:00:00 GMT">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<META HTTP-EQUIV="content-language" CONTENT="ru">
+<STYLE TYPE="text/css">
+<!--
+BODY
+{
+	font-family: Verdana,Tahoma,Helvetica;
+	font-size: 16px;
+	outline-color: #FFFFFF;
+	border-top-style: inherit;
+	border-right-style: inherit;
+	border-bottom-style: inherit;
+	border-left-style: inherit;
+	background-color: #FFFFC4;
+	margin-left: 5px;
+	margin-top: 5px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	color: #FF0000;
+	font-style: normal;
+	font-weight: bolder;
+}
+body,td,th {
+	color: #000033;
+	font-size: 12px;
+	font-weight: normal;
+}
+a:link {
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+a:active {
+	text-decoration: none;
+}
+.стиль1 {
+	font-size: 18px;
+	font-weight: bold;
+}
+.стиль2 {font-size: 12}
+.стиль3 {font-size: 12; font-weight: bold; }
+.стиль4 {font-size: 12; font-weight: bold; color: #0000FF; }
+.стиль5 {font-size: 12; color: #FF0000; }
+.стиль6 {color: #FF0000}
+
+-->
+</STYLE>
+</HEAD>
+
+<BODY>
+<P ALIGN="CENTER" CLASS="стиль1">Алгоритм расчета хода боя:</P>
+<P>При работе алгоритма используется следующая функция:</P>
+<P>РасчетЕстественнойЗащитыПредмета()</P>
+<P>В этой функции определяется значение защиты предмета в той области, в которую наносят удар, в зависимости от типа брони этого предмета и типа оружия, которым наносят удар. В функции определяются коэффициенты для базовой защиты предмета, которая задается в админовке.</P>
+<P>Коэффициент определяется по таблице: </P>
+<TABLE WIDTH="635" BORDER="2" CELLPADDING="3" CELLSPACING="1" BORDERCOLOR="#000066">
+  <CAPTION CLASS="стиль4">
+	Коэффициенты модификации базовой брони предметов
+  </CAPTION>
+  <TR>
+	<TD CLASS="стиль5">&nbsp;</TD>
+	<TD COLSPAN="5" CLASS="стиль2"><DIV ALIGN="CENTER" CLASS="стиль5"><STRONG>Тип оружия удара </STRONG></DIV></TD>
+  </TR>
+  <TR>
+	<TD CLASS="стиль2"><DIV ALIGN="CENTER" CLASS="стиль5"><STRONG>Тип брони предмета </STRONG></DIV></TD>
+	<TD CLASS="стиль3"><DIV ALIGN="CENTER" CLASS="стиль5">Кулачное</DIV></TD>
+	<TD CLASS="стиль3"><DIV ALIGN="CENTER" CLASS="стиль6">Стрелковое</DIV></TD>
+	<TD CLASS="стиль3"><DIV ALIGN="CENTER" CLASS="стиль6">Рубящее</DIV></TD>
+	<TD CLASS="стиль3"><DIV ALIGN="CENTER" CLASS="стиль6">Дробящее</DIV></TD>
+	<TD CLASS="стиль3"><DIV ALIGN="CENTER" CLASS="стиль6">Колющее</DIV></TD>
+  </TR>
+  <TR>
+	<TD CLASS="стиль2">Одежда</TD>
+	<TD ALIGN="RIGHT" VALIGN="MIDDLE" CLASS="стиль2"><DIV ALIGN="RIGHT">1</DIV></TD>
+	<TD ALIGN="RIGHT" VALIGN="MIDDLE" CLASS="стиль2"><DIV ALIGN="RIGHT">1</DIV></TD>
+	<TD ALIGN="RIGHT" VALIGN="MIDDLE" CLASS="стиль2"><DIV ALIGN="RIGHT">0</DIV></TD>
+	<TD ALIGN="RIGHT" VALIGN="MIDDLE" CLASS="стиль2"><DIV ALIGN="RIGHT">0</DIV></TD>
+	<TD ALIGN="RIGHT" VALIGN="MIDDLE" CLASS="стиль2"><DIV ALIGN="RIGHT">0</DIV></TD>
+  </TR>
+  <TR>
+	<TD CLASS="стиль2">Кожанная</TD>
+	<TD ALIGN="RIGHT" VALIGN="MIDDLE" CLASS="стиль2"><DIV ALIGN="RIGHT">1.25</DIV></TD>
+	<TD ALIGN="RIGHT" VALIGN="MIDDLE" CLASS="стиль2"><DIV ALIGN="RIGHT">1</DIV></TD>
+	<TD ALIGN="RIGHT" VALIGN="MIDDLE" CLASS="стиль2"><DIV ALIGN="RIGHT">0.5</DIV></TD>
+	<TD ALIGN="RIGHT" VALIGN="MIDDLE" CLASS="стиль2"><DIV ALIGN="RIGHT">1.5</DIV></TD>
+	<TD ALIGN="RIGHT" VALIGN="MIDDLE" CLASS="стиль2"><DIV ALIGN="RIGHT">1</DIV></TD>
+  </TR>
+  <TR>
+	<TD CLASS="стиль2">Кольчужная</TD>
+	<TD ALIGN="RIGHT" VALIGN="MIDDLE" CLASS="стиль2"><DIV ALIGN="RIGHT">1.5</DIV></TD>
+	<TD ALIGN="RIGHT" VALIGN="MIDDLE" CLASS="стиль2"><DIV ALIGN="RIGHT">0.5</DIV></TD>
+	<TD ALIGN="RIGHT" VALIGN="MIDDLE" CLASS="стиль2"><DIV ALIGN="RIGHT">1.5</DIV></TD>
+	<TD ALIGN="RIGHT" VALIGN="MIDDLE" CLASS="стиль2"><DIV ALIGN="RIGHT">0.5</DIV></TD>
+	<TD ALIGN="RIGHT" VALIGN="MIDDLE" CLASS="стиль2"><DIV ALIGN="RIGHT">1</DIV></TD>
+  </TR>
+  <TR>
+	<TD CLASS="стиль2">Латы</TD>
+	<TD ALIGN="RIGHT" VALIGN="MIDDLE" CLASS="стиль2"><DIV ALIGN="RIGHT">2</DIV></TD>
+	<TD ALIGN="RIGHT" VALIGN="MIDDLE" CLASS="стиль2"><DIV ALIGN="RIGHT">0.5</DIV></TD>
+	<TD ALIGN="RIGHT" VALIGN="MIDDLE" CLASS="стиль2"><DIV ALIGN="RIGHT">1.5</DIV></TD>
+	<TD ALIGN="RIGHT" VALIGN="MIDDLE" CLASS="стиль2"><DIV ALIGN="RIGHT">1</DIV></TD>
+	<TD ALIGN="RIGHT" VALIGN="MIDDLE" CLASS="стиль2"><DIV ALIGN="RIGHT">0.5</DIV></TD>
+  </TR>
+</TABLE>
+  <P>&nbsp;</P>
+  <P>Сам алгоритм боя:</P>
+  <P>(бой с ботом практически одинаков бою с игроком. Об особенностях боя с ботом будет упомянуто по тексту) </P>
+  <P>Создается двумерный массив</P>
+  <P>Массив в качестве 1 измерения содержит всех игроков, далее массив содержит </P>
+  <P> $users[$q]['defense']['HP']['all']			=0 - текущее значение защиты всех частей тела (уменьшается неоружейной атакой) <BR>
+$users[$q]['defense']['HP']['golova']		=0 - текущее значение защиты головы (уменьшается оружейной атакой по голове) <BR>
+$users[$q]['defense']['HP']['telo']			=0 - текущее значение защиты тела (уменьшается оржуеной атакой по телу) <BR>
+$users[$q]['defense']['HP']['pah']			=0 - текущее значение защиты паха (уменьшается оржуеной атакой по паху)<BR>
+$users[$q]['defense']['HP']['plecho']		=0 - текущее значение защиты плеча (уменьшается оржуеной атакой по плечам) <BR>
+$users[$q]['defense']['HP']['nogi']			=0 - текущее значение защиты ног (уменьшается оржуеной атакой по ногам) <BR>
+$users[$q]['defense']['MP']					=0 - текущее значение защиты маны (уменьшается неоружейной атакой по мане) <BR>
+$users[$q]['defense']['STM']				=0 - текущее значение защиты энергии (уменьшается неоружейной атакой по энергии) <BR>
+$users[$q]['defense_all']['HP']['all']		=0 - максимальное значение защиты всех частей тела (уменьшается неоружейной атакой) <BR>
+$users[$q]['defense_all']['HP']['golova']	=0 - максимальное значение защиты головы (уменьшается оружейной атакой по голове) <BR>
+$users[$q]['defense_all']['HP']['telo']		=0 - максимальное значение защиты тела (уменьшается оржуеной атакой по телу) <BR>
+$users[$q]['defense_all']['HP']['pah']		=0 - максимальное значение защиты паха (уменьшается оржуеной атакой по паху)<BR>
+$users[$q]['defense_all']['HP']['plecho']	=0 - максимальное значение защиты плеча (уменьшается оржуеной атакой по плечам) <BR>
+$users[$q]['defense_all']['HP']['nogi']		=0- максимальное значение защиты ног (уменьшается оржуеной атакой по ногам) <BR>
+$users[$q]['defense_all']['MP']				=0 - максимальное значение защиты маны (уменьшается неоружейной атакой по мане) <BR>
+$users[$q]['defense_all']['STM']			=0 - максимальное значение защиты энергии (уменьшается неоружейной атакой по энергии) <BR>
+$users[$q]['proc']							=0 - суммарный процент действий для защиты от &quot;двойных&quot; ходов (не более 100%) <BR>
+$users[$q]['name'] - имя игрока</P>
+  <P>Сначала выполняется лечение всех игроков:<BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Не могут лечить игроки, которые уже мертвы.<BR>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Нельзя лечить игроков которые уже мертвы к этому ходу<BR>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Можно лечить только своих союзников<BR>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	Иначе идет расчет эффекта от лечения (формулы лечения приведены в файле <A HREF="formulas.htm" TARGET="_blank">formulas.htm</A>)  	</P>
+  <P>Далее выполняется защита всех игроков:<BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Не могут защищать игроки, которые уже мертвы.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Нельзя защищать игрока, который уже мертв.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Можно защищать только своего союзника<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Иначе идет расчет защиты. При расчете защиты увеличиваются в массиве $users значения текущих и максимальной защиты. Если идет немагическая защита щитом, артефактом или предметом области - увеличивается в массиве сумма защиты только этой области (с учетом того, что защищается одновременно 2 области тела), если защита магическая - увеличение показателей защиты в массиве производится в формуле заклинания (формулы защиты приведены в файле <A HREF="formulas.htm" TARGET="_blank">formulas.htm</A>) </P>
+<P>Если идет бой с ботом, то добавляется удар бота - случайно выбирается область тела удара и тип удара. Может быть несколько ударов.</P>
+  <P>  Далее выполняется атака всех игроков:<BR>
+	Порядок игроков для атаки выбирается в порядке уменьшения удачи - увеличения инициативы - увеличения свободного веса - уменьшения текущей энергии
+	  <BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Не могут атаковать игроки, которые уже мертвы к этому ходу.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Нельзя атаковать игрока, который уже мертв<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (формулы атаки и промахов приведены в файле <A HREF="formulas.htm" TARGET="_blank">formulas.htm</A>)</P>
+  <P>1. Атака кулаком:</P>
+  <P>2. Атака оружием </P>
+  <P>За удар прочность оружия уменьшается по формуле: round(Процент атаки/100*RAND(10,100)/100,2);</P>
+  <P>В случае промаха есть 5% шанс полностью сломать оружие (если удар выполняется при мощной атаке) или прочность оружия уменьшается по формуле $polomka = round(RAND(300,500)/100,2); (если удар выполняется НЕ при мощной атаке) </P>
+  <P>3. Атака магией<BR>В случае если не было осечки магического заклинания (см.файл <A HREF="formulas.htm" TARGET="_blank">formulas.htm</A>) рассчитывается магическое заклинание.<BR>
+  <P>4. Атака артефактом:<BR>
+	<P>При атаке артефактом не бывает промахов и критов. И! Урон от атаки&nbsp; не уменьшается на естественную броню предмета области, в которую наносится удар.</P>
+	Если выполняется атака магией, то уменьшаются текущие показатели защиты всего
+  тела, маны и энергии на Макс(Значение урона атаки,Остаток текущей защиты &quot;зоны&quot;)<BR>
+  Иначе уменьшаются защита соотв.области тела на Макс(Значение урона атаки, Остатко текущей защиты области тела)<BR>
+  <BR>
+  Далее к значению урона прибавляется урон HP от магии.</P>
+  <P>Если удар по противнику &quot;прошел&quot;, то рассчитывается золото и опыт от нанесенного урона противнику по формулам:<BR>
+$dam_hp = min($damage_hp,Текущее значение HP противника);<BR>
+$k = $dam_hp/Максимальное значение HP противника;<BR>
+Коэффициент_Склонности = повышающий/понижающий коэффициент в зависимости от склонностей атакующего и атакуемого
+if (Бой с игроком)<BR>
+{<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+$gp = round($k*( Уровень противника*3 ) * Коэффициент_Склонности,2);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+$exp = round(($dam_hp/2*5+($dam_hp/4*(Уровень противника-Уровень игрока))) * Коэффициент_Склонности,2);<BR>
+}<BR>
+else<BR>
+{<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+$gp = round($k*Золото за бота,2);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+$exp = round($k*Опыт за бота);<BR>
+}<BR>
+if (На игрока наложено &quot;проклятие&quot;)<BR>
+{<BR>
+$exp = round($exp/5);<BR>
+$gp = round($gp/5,2);<BR>
+}<BR>
+	<BR>
+  </P>
+  <P>&nbsp;</P>
+  <P>После выполнения всех действий хода выполняются служебные функции:<BR>
+	1) Формируется лог хода битвы<BR>
+	2) Осуществляется ввод в битву новых игроков (с учетом типа текущего боя) <BR>
+3) Выравниваются к максимальным значения HP, MP и энергии<BR>
+4) Выравниваются к текущим в случае &quot;перекачки&quot; заклинаниями значения характеристик и боевых навыков<BR>
+</P>
+  <P><BR>
+	<BR>
+	<BR>
+  </P>
+</BODY>
+
+
+</HTML>

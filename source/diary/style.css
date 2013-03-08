@@ -1,0 +1,79 @@
+FONT {
+	FONT-SIZE: 10px; FONT-FAMILY: Verdana, Helvetica
+}
+TD {
+	FONT-SIZE: 10px; FONT-FAMILY: Verdana, Helvetica
+}
+BODY {
+	FONT-SIZE: 10px; CURSOR: url('/images/diary/img/elf.cur'), default; FONT-FAMILY: Verdana, Helvetica
+}
+P {
+	FONT-SIZE: 10px; FONT-FAMILY: Verdana, Helvetica
+}
+DIV {
+	FONT-SIZE: 10px; FONT-FAMILY: Verdana, Helvetica
+}
+INPUT {
+	BORDER-LEFT-COLOR: #bda96d; BORDER-BOTTOM-COLOR: #bda96d; FONT: 10px Verdana,Arial,Helvetica,sans-serif; COLOR: #ffffff; BORDER-TOP-COLOR: #bda96d; BACKGROUND-COLOR: #000000; BORDER-RIGHT-COLOR: #bda96d
+}
+TEXTAREA {
+	BORDER-LEFT-COLOR: #bda96d; BORDER-BOTTOM-COLOR: #bda96d; FONT: 10px Verdana,Arial,Helvetica,sans-serif; COLOR: #ffffff; BORDER-TOP-COLOR: #bda96d; BACKGROUND-COLOR: #000000; BORDER-RIGHT-COLOR: #bda96d
+}
+SELECT {
+	BORDER-LEFT-COLOR: #bda96d; BORDER-BOTTOM-COLOR: #bda96d; FONT: 10px Verdana,Arial,Helvetica,sans-serif; COLOR: #ffffff; BORDER-TOP-COLOR: #bda96d; BACKGROUND-COLOR: #000000; BORDER-RIGHT-COLOR: #bda96d
+}
+FORM {
+	FONT-SIZE: 10px; FONT-FAMILY: Verdana, Helvetica
+}
+A:link {
+	FONT-SIZE: 10px; BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #cccccc; FONT-FAMILY: Verdana, Helvetica; TEXT-DECORATION: none; cursor: url('/images/nav/hand.cur'), pointer;
+}
+A:active {
+	FONT-SIZE: 10px; BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #cccccc; FONT-FAMILY: Verdana, Helvetica; TEXT-DECORATION: none; cursor: url('/images/nav/hand.cur'), pointer;
+}
+A:visited {
+	FONT-SIZE: 10px; BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #cccccc; FONT-FAMILY: Verdana, Helvetica; TEXT-DECORATION: none; cursor: url('/images/nav/hand.cur'), pointer;
+}
+A:hover {
+	FONT-SIZE: 10px; BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #ffffff; FONT-FAMILY: Verdana, Helvetica; TEXT-DECORATION: underline; cursor: url('/images/nav/hand.cur'), pointer;
+}
+.title {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #999999; FONT-FAMILY: Verdana, Helvetica; TEXT-DECORATION: none
+}
+.content {
+	FONT-SIZE: 10px; BACKGROUND: url(none); COLOR: #ffffff; FONT-FAMILY: Verdana, Helvetica
+}
+.xcontent {
+	FONT-SIZE: 10px; BACKGROUND: url(none); CURSOR: url('/images/diary/img/elf.cur'); COLOR: #ffffff; FONT-FAMILY: Verdana, Helvetica
+}
+.block-title {
+	FONT-SIZE: 10px; BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #999999; FONT-FAMILY: Verdana, Helvetica
+}
+.storytitle {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #ffffff; FONT-FAMILY: Verdana, Helvetica; TEXT-DECORATION: none
+}
+.storycat {
+	FONT-WEIGHT: bold; FONT-SIZE: 10px; BACKGROUND: url(none); COLOR: #999999; FONT-FAMILY: Verdana, Helvetica; TEXT-DECORATION: underline
+}
+.boxtitle {
+	FONT-WEIGHT: bold; FONT-SIZE: 10px; BACKGROUND: url(none); COLOR: #cccccc; FONT-FAMILY: Verdana, Helvetica; TEXT-DECORATION: none
+}
+.boxcontent {
+	FONT-SIZE: 10px; BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #ffffff; FONT-FAMILY: Verdana, Helvetica
+}
+.option {
+	FONT-WEIGHT: bold; FONT-SIZE: 10px; BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #cccccc; FONT-FAMILY: Verdana, Helvetica; TEXT-DECORATION: none
+}
+.tiny {
+	FONT-WEIGHT: normal; FONT-SIZE: 10px; BACKGROUND: url(none); COLOR: #ffffff; FONT-FAMILY: Verdana, Helvetica; TEXT-DECORATION: none
+}
+.texte {
+	FONT-SIZE: 10px; COLOR: #ffffff; FONT-FAMILY: Verdana, Helvetica, sans-serif
+}
+.navtext {
+	BORDER-RIGHT: 1px solid; BORDER-TOP: 1px solid; FONT-SIZE: 10px; BORDER-LEFT: 1px solid; WIDTH: 150px; COLOR: white; BORDER-BOTTOM: 1px solid; BACKGROUND-COLOR: black; layer-background-color: black
+}
+BODY {
+	font-family: Tahoma,Verdana,Arial,Helvetica,georgia,sans-serif;
+	font-size: 13px;
+}

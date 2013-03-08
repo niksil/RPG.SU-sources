@@ -1,0 +1,177 @@
+BODY
+{
+	scrollbar-base-color:3A3A3A ;
+	scrollbar-track-color: 3A3A3A;
+	padding: 0;
+	margin: 0;
+	font-weight : normal;
+	font-size : 11px;
+	font-family : Verdana, tahoma, arial, helvetica, sans-serif;
+	background : #000000;
+	margin : 0;
+	color : #D4D4D4;
+	CURSOR: url('/images/nav/normal.cur'), default; 
+}
+
+P     { text-align: justify;}
+
+TD
+{
+	font-size : 11px;
+	font-family : Verdana, tahoma, arial, helvetica, sans-serif;
+}
+
+
+TEXTAREA
+{
+	border-right : 1px solid #9A9A9A;
+	border-top : 1px solid #666666;
+	font-weight : bold;
+	font-size : 12px;
+	border-left : 1px solid #9A9A9A;
+	color : #ffffff;
+	text-indent : 2px;
+	border-bottom : 1px solid #ffffff;
+	font-family : Verdana, tahoma, arial, helvetica, sans-serif;
+	background-color : #000000;
+}
+
+INPUT
+{
+BORDER-RIGHT: #666666 1px outset; 
+BORDER-TOP: #000000 1px  outset; 
+FONT-SIZE: 11px;        
+BORDER-LEFT: #000000 1px  outset; 
+COLOR: #F0F0F0; 
+BORDER-BOTTOM: #666666 1px outset; 
+FONT-FAMILY: Verdana; 
+BACKGROUND-COLOR: #363636; 
+font-weight : normal;
+text-indent : 2px;
+}
+SELECT
+{
+BORDER-RIGHT: #666666 1px inset;
+BORDER-TOP: #000000 1px  inset; 
+FONT-SIZE: 10px;        
+BORDER-LEFT: #000000 1px  inset; 
+COLOR: #F0F0F0; 
+BORDER-BOTTOM: #666666 1px inset; 
+FONT-FAMILY: Tahoma,Verdana,Arial; 
+BACKGROUND-COLOR: #585858; 
+font-weight : 100;
+text-indent : 2px;
+}
+INPUT.BUTTON {
+BORDER-RIGHT: #666666 1px outset; 
+BORDER-TOP: #000000 1px outset; 
+FONT-SIZE: 11px; 
+BORDER-LEFT: #000000 1px outset; 
+COLOR: #cccccc; 
+BORDER-BOTTOM: #666666 1px outset; 
+FONT-FAMILY: Verdana; 
+BACKGROUND-COLOR: #363636; 
+font-weight : normal;
+text-indent : 2px;
+	background: #FFF;
+	border: 3px groove #4C77B6;
+	color: #000;
+	font-family: verdana, helvetica, sans-serif;
+	font-size: 11px;
+	margin: 10px;
+	padding: 2px;
+	vertical-align: middle;
+	width: 140px;
+}
+INPUT.SMALLBUTTON {
+	background: #FFF;
+	border: 1px groove #4C77B6;
+	color: #000;
+	font-family: verdana, helvetica, sans-serif;
+	font-size: 9px;
+	margin-left: 10px;
+	margin-top: 2px;
+	padding: 0px;
+	vertical-align: middle;
+	width: 140px;
+}
+
+SELECT
+{
+	font-weight : bold;
+	font-size : 10px;
+	font-family : Verdana, tahoma, arial, helvetica, sans-serif;
+}
+
+SELECT.pn-text
+{
+	font-weight : bold;
+	font-size : 11px;
+	color : #000000;
+	font-family : Verdana, tahoma, arial, helvetica, sans-serif;
+	background-color : #ffffff;
+}
+
+a, a:visited, a:link {CURSOR: url('/images/nav/hand.cur'), pointer; }
+a:hover {CURSOR: url('/images/nav/hand.cur'), pointer; }
+
+A:link
+{
+	FONT-WEIGHT: bold; 
+	FONT-SIZE: 11px; 
+	COLOR: #f4db8b; 
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	text-decoration : none;
+}
+
+A:visited
+{
+	FONT-WEIGHT: bold; 
+	FONT-SIZE: 11px; 
+	COLOR: #f4db8b; 
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	text-decoration : none;
+}
+
+A:hover
+{
+	FONT-WEIGHT: bold; 
+	FONT-SIZE: 11px; 
+	COLOR: #b8a464; 
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	text-decoration : none;
+}
+
+A:active
+{
+	FONT-WEIGHT: bold; 
+	FONT-SIZE: 11px; 
+	COLOR: #f4db8b; 
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	text-decoration : none;
+}
+
+TD.m
+{
+	border-right : 1px solid #444444;
+	padding-right : 1px;
+	border-top : 1px solid #666666;
+	padding-left : 0px;
+	padding-bottom : 0px;
+	font : bold 10px verdana;
+	border-left : 1px solid #444444;
+	color : #F29D00;
+	padding-top : 0px;
+	border-bottom : 1px solid #666666;
+	height : 20px;
+	background-color : #000000;
+	text-align : justify;
+
+}
+
+.ERROR
+{
+	font-family: Verdana,Tahoma,Arial,Times,sans-serif;
+	font-weight: 700;
+	color: #FF0000;
+}

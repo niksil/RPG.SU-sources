@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC
+          "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+
+<title>Tab-View Sample</title>
+
+<link rel="stylesheet" type="text/css" href="tabview.css" />
+
+<script type="text/javascript" src="tabview.js">
+</script>
+
+</head>
+<body>
+
+<form action="tabview.html" method="get">
+
+<div class="TabView" id="TabView">
+
+<!-- *** Tabs ************************************************************** -->
+
+<div class="Tabs" style="width: 350px;">
+  <a>Tab 1</a>
+  <a>Tab 2</a>
+  <a>Tab 3</a>
+</div>
+
+<!-- *** Pages ************************************************************* -->
+
+<div class="Pages" style="width: 350px; height: 250px;">
+
+  <div class="Page">
+  <div class="Pad">
+
+  <!-- *** Page1 Start *** -->
+
+  <br />
+  <table>
+  <table>
+  <tr>
+    <td style="vertical-align: top;">Distributed form:&nbsp;</td>
+    <td>
+    <input type="text" name="first" />
+    <br />
+    <small>Note: the rest of the form is at the Tab 3.</small>
+	</td>
+  </tr>
+  </table>
+
+  <!-- *** Page1 End ***** -->
+
+  </div>
+  </div>
+
+  <!-- *** Page2 Start *** -->
+
+  <div class="Page">
+  <div class="Pad">
+
+  Tab2<br />Tab2<br />Tab2<br />Tab2<br />Tab2<br />Tab2<br />Tab2<br />Tab2<br />Tab2<br />Tab2<br />Tab2<br />Tab2<br />Tab2<br />Tab2<br />Tab2<br />Tab2<br />Tab2<br />Tab2<br />Tab2<br />Tab2<br />Tab2<br />Tab2<br />Tab2<br />Tab2<br />Tab2<br />Tab2<br />Tab2<br />Tab2<br />Tab2<br />Tab2<br />Tab2<br />Tab2<br />Tab2<br />Tab2<br />Tab2<br />Tab2<br />Tab2<br />Tab2<br />
+
+  <!-- *** Page2 End ***** -->
+
+  </div>
+  </div>
+
+  <div class="Page">
+  <div class="Pad">
+
+  <!-- *** Page3 Start *** -->
+
+  <br />
+
+  <table>
+  <tr>
+    <td>Username:&nbsp;</td>
+    <td><input style="width: 120px;" type="text"     name="username" /></td>
+  </tr>
+  <tr>
+    <td>Password:&nbsp;</td>
+    <td><input style="width: 120px;" type="password" name="password" /></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><input type="submit" value="Submit" /></td>
+  </tr>
+  </table>
+
+  <!-- *** Page3 End ***** -->
+
+  </div>
+  </div>
+
+</div>
+
+</div>
+
+</form>
+
+<script type="text/javascript">
+
+tabview_initialize('TabView');
+
+</script>
+
+</body>
+</html>

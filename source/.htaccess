@@ -1,0 +1,4 @@
+AddType application/x-httpd-php .php 
+RewriteEngine On
+RewriteBase /
+RewriteRule ^userbar/(.*).png$ userbar/index.php?name=$1 [L,QSA]
